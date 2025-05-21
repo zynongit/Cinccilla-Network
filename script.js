@@ -1,21 +1,24 @@
 let posts = [];
 
 function criarPost() {
-  const input = document.getElementById("postInput");
-  const texto = input.value.trim();
-  if (texto === "") return;
+  const url = document.getElementById("imageUrl").value.trim();
+  const legenda = document.getElementById("caption").value.trim();
+
+  if (url === "" || legenda === "") return;
 
   const novoPost = {
-    texto: texto,
+    imagem: url,
+    legenda: legenda,
     curtidas: 0
   };
 
   posts.unshift(novoPost);
-  input.value = "";
+  document.getElementById("imageUrl").value = "";
+  document.getElementById("caption").value = "";
   atualizarFeed();
 }
 
-function curtirPost(index) {
+function curtir(index) {
   posts[index].curtidas += 1;
   atualizarFeed();
 }
@@ -28,8 +31,9 @@ function atualizarFeed() {
     const div = document.createElement("div");
     div.className = "post";
     div.innerHTML = `
-      <p>${post.texto}</p>
-      <div class="like-btn" onclick="curtirPost(${index})">❤️ Curtidas: ${post.curtidas}</div>
+      <img src="${post.imagem}" alt="Post" />
+      <div class="caption">${post.legenda}</div>
+      <div class="like-btn" onclick="curtir(${index})">❤️ Curtidas: ${post.curtidas}</div>
     `;
     feed.appendChild(div);
   });
