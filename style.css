@@ -1,62 +1,64 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background: #fafafa;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 500px;
   margin: auto;
   padding: 20px;
-  background-color: white;
+  background: white;
   min-height: 100vh;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  margin-bottom: 20px;
 }
 
-.post-box {
+.post-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-textarea {
-  width: 100%;
-  height: 80px;
+input {
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 button {
-  padding: 10px;
-  background-color: #4CAF50;
+  background: #0095f6;
   color: white;
   border: none;
-  font-weight: bold;
+  padding: 10px;
   cursor: pointer;
 }
 
 .post {
+  margin-top: 20px;
   border: 1px solid #ddd;
-  padding: 10px;
-  margin-top: 15px;
-  background-color: #fafafa;
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
 }
 
-.post p {
-  margin: 0;
+.post img {
+  width: 100%;
+}
+
+.post .caption {
+  padding: 10px;
+  font-size: 14px;
 }
 
 .like-btn {
-  margin-top: 10px;
+  padding: 10px;
   color: #888;
-  cursor: pointer;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .like-btn:hover {
